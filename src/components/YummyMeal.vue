@@ -5,17 +5,12 @@
     <button @click="addToCart">Add to Cart</button>
   </p>
 </template>
-<script>
+<script setup>
+const props = defineProps({
+  name: String,
+  price: Number,
+});
+const emit = defineEmit(["addToCart"]);
 import YummyMealPrice from "./YummyMealPrice.vue";
-export default {
-  components: { YummyMealPrice },
-  props: {
-    name: String,
-    price: Number,
-  },
-  setup(props, { emit }) {
-    const addToCart = () => emit("addToCart", props.name);
-    return { addToCart };
-  },
-};
+const addToCart = () => emit("addToCart", props.name);
 </script>
