@@ -19,7 +19,7 @@
 
 <script>
 import YummyMeal from "./components/YummyMeal.vue";
-import { ref, reactive, watch, provide } from "vue";
+import { ref, reactive, watch, provide, onMounted } from "vue";
 export default {
   components: { YummyMeal },
   setup() {
@@ -38,6 +38,14 @@ export default {
     const addItemToCart = (item) => cart.push(item);
     const removeWatcher = watch([() => [...cart]], (newValue, oldValue) =>
       alert(newValue.join("\n"))
+    );
+
+    onMounted(() => {
+      console.log(name.value);
+    });
+
+    console.log(
+      "this is essentially the same as logging inside of the created hook"
     );
 
     return {
