@@ -4,8 +4,8 @@
   </div>
 </template>
 <script setup>
-import usePost from '../composables/usePost.js'
+import useResource from '../composables/useResource.js'
 import PostCard from "../components/PostCard.vue";
-const {posts, fetchAll} = usePost()
+const {items: posts, fetchAll} = useResource('posts')
 fetchAll()
 </script>

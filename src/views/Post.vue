@@ -7,11 +7,14 @@
 </template>
 <script setup>
 import {useRoute} from 'vue-router'
-import usePost from '../composables/usePost.js'
+import useResource from '../composables/useResource.js'
 const route = useRoute()
-const {post, fetchOne} = usePost()
-fetchOne(route.params.id)
-const user = {
-  name: "Leanne Graham",
-};
+
+//Post
+const {item: post, fetchOne: fetchPost} = useResource('posts')
+fetchPost(route.params.id)
+
+// User
+const {item: user, fetchOne: fetchUser} = useResource('users')
+fetchUser(1)
 </script>
