@@ -9,7 +9,7 @@
 
 <script setup>
 
-import usePageResquest from './composables/usePageRequest'
+// import usePageResquest from './composables/usePageRequest'
 </script>
 <style lang="css">
 .container {
