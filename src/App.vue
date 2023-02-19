@@ -7,7 +7,10 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+
+import usePageResquest from './composables/usePageRequest'
+</script>
 <style lang="css">
 .container {
   max-width: 960px;
